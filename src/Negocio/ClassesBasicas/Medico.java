@@ -20,4 +20,15 @@ public class Medico extends PessoaAbstrata {
     public Especialidade getEspecialidade() {
         return especialidade;
     }
+
+    @Override
+    public String toString(){
+        return "\nMédico {nome='" + this.getNome() + '\'' +
+                ", cpf='" + this.getCpf() + '\'' +
+                ", dataDeNascimento='" + this.getDataNascimento() + '\'' +
+                ", sexo=" + this.getSexo() +
+                ", especialidade=" + this.especialidade +
+                ", crm=" + this.CRM + "}\n";
+    }
+
 }

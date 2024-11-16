@@ -23,11 +23,11 @@ public class Paciente extends PessoaAbstrata {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "\nPaciente{" +
                 "nome='" + this.getNome() + '\'' +
                 ", cpf='" + this.getCpf() + '\'' +
                 ", dataDeNascimento='" + this.getDataNascimento() + '\'' +
                 ", sexo=" + this.getSexo() +
-                "plano=" + this.plano +'}';
+                ", plano=" + this.plano + "}\n";
     }
 }

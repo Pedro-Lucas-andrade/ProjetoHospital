@@ -6,7 +6,11 @@ import Negocio.ClassesBasicas.PessoaAbstrata;
 import java.util.ArrayList;
 
 public class RepositorioMedicos_Pacientes implements IRepositorioPessoas {
-    private ArrayList<PessoaAbstrata> arrayPessoas = new ArrayList<>();
+    private ArrayList<PessoaAbstrata> arrayPessoas;
+
+    public RepositorioMedicos_Pacientes(){
+        arrayPessoas = new ArrayList<>();
+    }
 
     @Override
     public boolean buscar(String cpf){
@@ -20,21 +24,21 @@ public class RepositorioMedicos_Pacientes implements IRepositorioPessoas {
 
     @Override
     public ArrayList<PessoaAbstrata> ler() {
-        if(arrayPessoas.isEmpty()){
-            return null;
-        }
         return arrayPessoas;
     }
 
+
     @Override
     public boolean adicionar(PessoaAbstrata pessoa) {
-        if(arrayPessoas.add(pessoa)) return true;
+        if(!buscar(pessoa.getCpf())){
+            return arrayPessoas.add(pessoa);
+        }
         return false;
     }
 
     @Override
-    public void remover(PessoaAbstrata pessoa) {
-        arrayPessoas.remove(pessoa);
+    public boolean remover(PessoaAbstrata pessoa) {
+        return arrayPessoas.remove(pessoa);
     }
 
     @Override
